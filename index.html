@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <!--riferimento foglio di stile -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+    <!-- img logo rai1-->
+    <img src="./immagini/logo.png" alt="logo rai">
+     <!-- bottone istruzioni gioco e bottone inizia quiz-->
+     <nav id="nav1">
+    <div class="start_btn"><button>Istruzioni</button></div>
+    <div class="inizia_btn"><button>Inizia Gioco</button></div>
+    </nav>
+    <!--Informazioni gioco-->
+    <div class="info_box">
+        <div class="info-list">
+            <div class="info"> Benvenuto Ecco le regole del gioco</div>
+            <br>
+            <div class="info">1. Ti verranno presentate una alla volta 10 domande</div>
+            <div class="info">2. Ad ogni domanda corrispondono 4 risposte di cui solo una è quella esatta.</div>
+            <div class="info">3. Hai a disposizione un tempo limitato di 20 secondi  per rispondere ad ogni domanda.</div>
+            <div class="info">4. Se indovini tutte le 10 domande avrai vinto. Buona fortuna</div>
+        </div>
+        <div class="buttons">
+            <button class="quit">Esci</button>
+        </div>
+    </div>
+    <!-- QUIZ -->
+    <div class="quiz_box">
+        <header>
+            <div class="title"></div>
+            <div class="timer">
+            <div class="time_left_txt"></div>
+            <div class="timer_sec">20</div>
+            </div>
+        </header>
+        <section>
+            <div class="que_text">
+            </div>
+            <div class="option_list">
+            </div>
+        </section>
+        <footer>
+            <div class="total_que">
+            </div>
+            <button class="next_btn">Successiva</button>
+        </footer>
+    </div>
+    <!-- Result Box -->
+    <div class="result_box">
+        <div class="complete_text1"></div>
+        <div class="score_text">PECCATO HAI PERSO RIPROVA!!</div>
+        <div class="buttons">
+        <br>
+        <br>
+        <br>
+        <br>
+            <!--<button class="restart">Ripeti</button>-->
+            <button class="quit">Esci</button>
+        </div>
+    </div>
+    </div>
+    <!--riferimento a file.js -->
+     <script src="domande.js"></script>
+     <script src="appl.js"></script> 
+</div>
+</body>
+</html>
+</html>

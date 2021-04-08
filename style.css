@@ -1,0 +1,320 @@
+opa*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+/*corpo e sfondo img*/
+body {
+    width: 100%;/*posizione bottoni*/
+    height: 90%;
+    background: url(./immagini/ered.jpg) no-repeat center top ;
+    background-color: rgb(39, 1, 250);/*colore di sfondo*/
+    background-position: 50% -45%;/*posizione img centrale*/
+}
+
+/*img rai*/
+img{
+    position: fixed;
+    top:16px;
+    right:20px;
+    width: 140px;/*posizione bottoni*/
+    height:65px;
+}
+  
+/**************BOTTONI******************************************/  
+/*pozione bottone Istruzioni gioco */
+.start_btn,
+.inizia_btn,
+.continue_btn,
+.info_btn,
+.info_box,
+.quiz_box,
+.result_box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.start_btn{
+    top: 30%;
+    left: 50%;
+}
+
+/*pozione bottone inizia quiz*/
+.inizia_btn{
+    position:absolute;
+    top: 84%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*Attivazione finestre*/
+.info_box.activeInizia,
+.info_box.activeInfo,
+.quiz_box.activeQuiz,
+.result_box.activeResult{
+    opacity: 1;
+    z-index: 5;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+/*bottone istruzioni*/
+.start_btn button{
+    background-size: cover;
+    font-size: 25px;
+    font-weight: 500;
+    color: #007bff;
+    padding: 10px 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+/*mouse hover bottone esci*/
+.buttons button.quit:hover{
+    color: #fff;
+    background: #007bff;
+}
+
+/*bottone inizio gioco*/
+.inizia_btn button{
+    font-size: 25px;
+    font-weight: 500;
+    color: #007bff;
+    padding: 10px 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+/*mouse hover bottone istruzioni e inizia gioco*/
+.start_btn button:hover{
+    color: #76b7fc;
+    background: rgb(80, 135, 255); 
+}
+.inizia_btn button:hover{
+    color: #76b7fc;
+    background: rgb(80, 135, 255); 
+}
+
+/*box informazioni gioco*/
+.info_box{
+    background-size: 60px 5px;
+    background-color: rgb(255, 38, 0);
+    border-radius: 5px;
+    top: 49.9%;
+    left: 50%;
+    opacity:0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+/*box informazioni titolo*/
+.info_box .info-list{
+    padding: 55px 10px;
+}
+
+.info_box .info-list .info{
+    margin: 0px 0;
+    font-size: 20px;
+}
+.info_box .buttons{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 165px;
+    border-top: 1px solid lightgrey;
+
+}
+
+/*bottone esci da informazioni*/
+.info_box .buttons button{
+    height: 35px; /*altezza bottone*/
+    width: 120px; /*largezza bottone*/
+    font-size: 20px;  /*dimensione font*/
+    border-radius: 20px; /*bordo bottone*/
+    border: 0px solid #007bff;/*bordo bottone*/
+}
+
+/*********************************************************/
+/*domande quiz*/
+.quiz_box{
+    width: 420px;/*larghezza card*/
+    height: 420px;/*altezza card*/
+    border-radius: 15px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/*intestazione header quiz*/
+.quiz_box header{
+    background-color: rgb(255, 153, 0);
+    position: relative;
+    height: 80px;
+    padding: 0 50px;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    align-items: center;
+}
+/****************************************/
+/*timer*/
+.quiz_box header .timer{
+    color: #ffffff;
+    width: 180px;/*posizione timer*/
+    font-size: 60px;/*dimensione timer*/
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+}
+
+/****************************************/
+
+/*sezione corpo scheda domande*/
+section{
+    padding: 0px 0px 0px 0px;
+}
+
+/*titolo domanda*/
+section .que_text{
+    font-size: 35px;
+    padding: 15px 15px;/*dimesione */
+    font-size: 21px;/*dimensione testo */
+    margin-bottom: 0px;
+    background-color: rgb(255, 153, 0);
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+}
+/*spazio tra titolo domande e risposte*/
+section .option_list{
+    padding: 20px 80px;/*lunghezza contenitore risposte*/
+    display: block;   
+}
+/*lista  domande*/
+section .option_list .option{
+    background: rgb(255, 123, 0);
+    border: 1px solid #13181b;
+    border-radius: 5px;
+    padding: 5px 15px;/*dimesione box risposte*/
+    font-size: 22px;/*dimensione testo risposta*/
+    margin-bottom: 10px;/*distanza tra risposte*/
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+}
+/*mouse hover risposte e colori risposte*/
+section .option_list .option:hover{
+    color: #4376ac;
+    background: #cce5ff;
+    border: 1px solid #b8daff;
+}
+/*opzione risposta orretta*/
+section .option_list .option.correct{
+    background: #00ff3c;
+    border: 12px solid #00ff3c;
+    color:black;
+}
+/*opzione risposta corretta*/
+section .option_list .option.incorrect{
+    color: #000000;
+    background: #88010c;
+    border: 1px solid #f5c6cb;
+}
+
+/*********************************/
+/*risultato domanda quiz e schermata finale*/
+.result_box{
+    background: rgb(255, 118, 7);
+    background-image: url('./immagini/carlo.jpg');
+    background-repeat: no-repeat;
+    background-size: 400px 200px;
+    border-radius: 10px;
+    border: 4px solid rgb(102, 255, 0);
+    display: flex;
+    width: 400px;/*larghezza schermata*/
+    height: 200px;/*altezza schermata*/
+    position:absolute;
+    top: 25%;/*posizione immagine*/
+    left: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content:space-evenly;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity:0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/*testo riusltato risposta*/
+.result_box .score_text{
+    padding: 0px 0px;
+    font-size: 25px;
+    color: rgb(255, 251, 251);
+}
+
+/*bottone  esci*/
+.buttons button.quit {
+    color: #007bff;
+    background: #fff;
+    padding: 10px 10px;
+    font-size: 20px;
+    font-weight: 0px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/***********************************************/
+/*parte finale*/
+footer{
+    background-color: rgb(255, 145, 0);
+    height: 100px;
+    padding: 0 80px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid lightgrey;
+    color: #ffffff;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/*bottone successiva*/
+footer button{
+    height: 40px;
+    width: 120px 20px;
+    padding: 0 0px;
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    background: #007bff;
+    border: 1px solid #007bff;
+    line-height: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+}
+
+/*footer bottone prossima*/
+footer button:hover{
+    background:#ffffff;
+    color: #2f00ff;
+}
+
+footer button.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+
